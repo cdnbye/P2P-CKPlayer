@@ -1,0 +1,26 @@
+{
+  "name": "p2p-ckplayerx",
+  "version": "0.2.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "scripts": {
+    "build": "webpack --config webpack.config.js",
+    "publish": "npm publish",
+    "git-push": "git add . && git commit -m 'change link' && git push",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cdnbye/P2P-CKPlayer.git"
+  },
+  "author": "cdnbye",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cdnbye/P2P-CKPlayer/issues"
+  },
+  "homepage": "https://github.com/cdnbye/P2P-CKPlayer#readme",
+  "devDependencies": {
+    "webpack": "^4.39.3",
+    "webpack-cli": "^3.3.7"
+  }
+}

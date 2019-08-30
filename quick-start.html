@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ckplayer</title>
+
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0px;
+            font-family: "Microsoft YaHei", YaHei, "微软雅黑", SimHei, "黑体";
+            font-size: 18px;
+        }
+
+        p {
+            padding-left: 2em;
+        }
+    </style>
+</head>
+<body>
+<div id="video" style="width: 100%; height: 400px;max-width: 600px;"></div>
+<script type="text/javascript" src="ckplayer/ckplayer.min.js" charset="UTF-8"></script>
+<!--<script type="text/javascript" src="ckplayer/ckplayer.js" charset="UTF-8"></script>-->
+<!--<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/p2p-ckplayer@latest/ckplayer/ckplayer.min.js" charset="UTF-8"></script>-->
+<script type="text/javascript">
+    var videoObject = {
+        container: '#video',//“#”代表容器的ID，“.”或“”代表容器的class
+        variable: 'player',//该属性必需设置，值等于下面的new chplayer()的对象
+        autoplay: true,
+        html5m3u8: true,
+        video: 'http://cn1.ruioushang.com/hls/20190824/6bbb04d6e14df9b331cf88409a8846c6/1566615719/index.m3u8',//视频地址
+        hlsjsConfig: {   // hlsjs和CDNBye的配置参数
+            debug: false,
+            // Other hlsjsConfig options provided by hls.js
+            p2pConfig: {
+                logLevel: true,
+                live: false,
+                // Other p2pConfig options provided by CDNBye
+                // https://github.com/cdnbye/hlsjs-p2p-engine/blob/master/docs/%E4%B8%AD%E6%96%87/API.md
+            }
+        }
+    };
+    var player = new ckplayer(videoObject);
+</script>
+<p>欢迎使用ckplayer，当前版本：X，<a href="http://www.ckplayer.com/" target="_blank">官网</a>，<a
+        href="http://www.ckplayer.com/manualX/" target="_blank">帮助手册</a></p>
+<p>本版本属于非官方定制版，内置了P2P加速引擎<a href="https://github.com/cdnbye/hlsjs-p2p-engine" target="_blank">CDNBye P2P</a>，<a
+        href="https://github.com/cdnbye/P2P-CKPlayer" target="_blank">P2P-CKPlayer</a></p>
+<p><a href="index.html" target="_blank">其它功能演示</a></p>
+</body>
+</html>
