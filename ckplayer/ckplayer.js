@@ -603,7 +603,7 @@ function ckplayerConfig() {
                     if (v[1] != '' && !mobile && supportType(v[1], codecs(v[1])) && v[0].substr(0, 4) != 'rtmp') {
                         nva.push(v);
                     }
-                    if ((this.getFileExt(v[0]) == '.m3u8' || this.vars['type'] == 'video/m3u8' || this.vars['type'] == 'm3u8' || v[1] == 'video/m3u8' || v[1] == 'm3u8') && this.vars['html5m3u8'] && !mobile) {
+                    if ((this.getFileExt(v[0]) == '.m3u8' || this.vars['type'] == 'video/m3u8' || this.vars['type'] == 'm3u8' || v[1] == 'video/m3u8' || v[1] == 'm3u8') && this.vars['html5m3u8'] && !this.isIOS()) {
                         this.isM3u8 = true;
                         nva.push(v);
                     }
@@ -8163,6 +8163,16 @@ function ckplayerConfig() {
 		*/
         isMobile: function() {
             if (navigator.userAgent.match(/(iPhone|iPad|iPod|Android|ios)/i)) {
+                return true;
+            }
+            return false;
+        },
+        /*
+            内置函数
+            判断是否是iOS
+        */
+        isIOS: function() {
+            if (navigator.userAgent.match(/(iPhone|iPad|iPod|iOS)/i)) {
                 return true;
             }
             return false;
