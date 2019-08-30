@@ -1,6 +1,6 @@
 {
   "name": "p2p-ckplayer",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "",
   "main": "webpack.config.js",
   "scripts": {

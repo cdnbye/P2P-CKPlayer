@@ -603,7 +603,7 @@ function ckplayerConfig() {
                     if (v[1] != '' && !mobile && supportType(v[1], codecs(v[1])) && v[0].substr(0, 4) != 'rtmp') {
                         nva.push(v);
                     }
-                    if ((this.getFileExt(v[0]) == '.m3u8' || this.vars['type'] == 'video/m3u8' || this.vars['type'] == 'm3u8' || v[1] == 'video/m3u8' || v[1] == 'm3u8') && this.vars['html5m3u8'] && !this.isIOS()) {
+                    if ((this.getFileExt(v[0]) == '.m3u8' || this.vars['type'] == 'video/m3u8' || this.vars['type'] == 'm3u8' || v[1] == 'video/m3u8' || v[1] == 'm3u8') && this.vars['html5m3u8'] && !this.isIOS() && !this.isUCBrowser()) {
                         this.isM3u8 = true;
                         nva.push(v);
                     }
@@ -8173,6 +8173,16 @@ function ckplayerConfig() {
         */
         isIOS: function() {
             if (navigator.userAgent.match(/(iPhone|iPad|iPod|iOS)/i)) {
+                return true;
+            }
+            return false;
+        },
+		/*
+            内置函数
+            判断是否是UC浏览器
+        */
+        isUCBrowser: function() {
+            if (navigator.userAgent.indexOf('UBrowser') > -1 || navigator.userAgent.indexOf('UCBrowser') > -1) {
                 return true;
             }
             return false;
